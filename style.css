@@ -1,0 +1,266 @@
+body{
+    background-color: #ccc;
+}
+
+#m1{
+    margin-top: 10;
+    font-family:courier;
+    color: rgb(237, 25, 25);
+    float: right;
+    font-size: 20pt;  
+}
+
+header{
+    margin-top: 10px;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+}
+
+header h1{
+float:right;
+}
+
+nav{
+    float:right;
+} 
+
+header nav ul{
+	list-style-type:none;
+}
+
+header nav ul li{
+	float:right;
+    margin-right:30px;
+}
+
+a:link{
+	text-decoration:none;
+    font-size: 22px;
+}
+
+select{
+    background-color: rgb(190, 190, 190);
+    margin-top: 15px;
+    margin-left: 23px;
+    font-size:15pt;
+}
+
+#m2{
+background-color: rgb(114, 166, 208);
+    height: 240px;
+    margin-top: 10px;
+    border: solid 2px rgb(255, 255, 255);
+}
+
+.mm1{
+    
+    border:2px solid rgb(4, 0, 255);
+    width: 350px;
+    height: 205px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#m2 h1{
+    width: 400px;
+    float:right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#m3{
+  background-color: rgb(114, 166, 208);
+  margin-top: 10px;
+  height: 240px;
+  border: solid 2px rgb(255, 255, 255);
+}
+
+.mm2{
+    width: 350px;
+    height: 205px;
+    margin-top: 15px;
+    border: solid 2px rgb(4, 0, 255);
+    margin-left: 10px;
+}
+
+#m3 h1{
+    float: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 400px;
+}
+
+ p{
+    width: 620px;
+    float:right;
+    font-family: tahoma;
+    margin-top:-130px;
+    padding: 10px;
+    font-size: 14pt;
+    text-align: right;
+ }
+
+ #m4{
+    background-color: rgb(202, 207, 205);
+    height: 975px;
+    margin-top: -30px;
+    border: 2px solid rgb(255, 255, 255);
+ }
+
+ #m4 ul{
+    list-style-type:none;
+    margin: 2px;
+ }
+ #m4 ul li{
+    float:right;
+    margin: 3px;
+ }
+
+.mm3{
+
+    background-color: rgb(255, 255, 255);
+    height: 480px;
+    width: 500px;
+}
+
+#m4 h1{
+    float: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 400px;
+}
+
+#m4 p{
+    margin-top: 3px;
+    width: 490px;  
+}
+
+a:link{
+	font-size:14pt;
+	font-family:calibri;
+}
+
+.mm4{
+    background-color: rgb(206, 65, 166);
+    height: 230px;
+    width: 477px;
+    padding: 2px;
+    border: 1px solid blue;
+    margin-top: 8px;
+    margin-left: 8.5px;
+    margin-right: 10px;
+}
+
+.mm5{
+    background-color: rgb(120, 221, 233);
+    height: 480px;
+    width: 740px;
+    padding-right: 65px;
+    padding-left: 235px;
+}
+
+.mm5 h1{
+margin-right: 255px;
+margin-bottom: -14px;
+text-align: center;
+}
+
+.mm5 h6{
+    width: 900px;
+    float:right;
+    font-family: tahoma;
+    margin-top:25px;
+    font-size: 11pt;
+    text-align: right;
+}
+
+.mm6{
+    background-color: rgb(206, 65, 166);
+    height: 230px;
+    width: 550px;
+    padding: 2px;
+    border: 1px solid blue;
+    margin-top: 8px;
+    margin-left: 8.5px;
+    margin-right: 10px;
+}
+
+.mm7{
+    background-color: rgb(120, 221, 233);
+    height: 250px;
+    width: 1052px;
+    margin-top:-30px;
+    border: 1px solid blue;
+}
+
+#mm9{
+    width: 460px;
+float:right;
+padding: 20px;
+margin-top: -175px;
+}
+
+.mm7 h1{
+    float: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 400px;
+      margin-bottom: 15px;
+}
+
+.mm8{
+
+    background-color: rgb(206, 65, 166);
+    height: 230px;
+    width: 450px;
+    padding: 2px;
+    border: 1px solid blue;
+    margin-top: 8px;
+    margin-left: 8.5px;
+    margin-right: 10px;
+}
+
+footer{
+background-color: rgb(211, 98, 98);
+padding-right:10px;
+padding-left:35px;
+padding-top:5px;
+padding-bottom:38px;
+border-top: 3px solid rgb(236, 207, 207);
+}
+
+#mass{
+overflow:hidden;
+
+}
+#mass ul{
+	list-style-type:none;
+	float:left;
+	width:280px;
+	margin-right:10px;
+}
+#mass h4{
+    padding-left: 20px;
+	color:rgb(255, 255, 255);
+	border-bottom:2px dotted rgb(255, 255, 255);
+    width: 300p
+}
+#mass ul li{
+    float: right;
+	text-decoration:none;
+    margin-left: 50px;
+    margin-right: 75px;
+    margin-bottom: 10px; 
+}
+
+#a2{
+	color:rgb(255, 255, 255);
+	margin-top:15px;
+	padding:5pX;
+	font-family:calibri;
+font-size:10pt;
+background-color:#A6A6A6FF;
+}
+
+#a2 p{
+    margin-top: 0px;
+    text-align: center;
+    width: 990px;
+}
+ 

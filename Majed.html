@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management Login</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body{
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #244532, #1f1417 ,#124535);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-box{
+            background:rgba(126, 105, 142, 0.1);
+            backdrop-filter: blur(50px);
+            border: 1px solid rgba(220, 208, 208, 0.2);
+            width: 350px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .login-box h2{
+            text-align: center;
+            margin-bottom: 25px;
+            color: #a69999;
+        }
+        label{
+            font-size: 14px;
+            color: #555;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin: 40px 0 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px; 
+        }
+        button{
+            width: 100%;
+            padding: 12px;
+            background: #2cb049;
+            border: none;
+            color: white;font-size: 16px;
+            border-radius: 6px;
+            cursor:pointer;
+        }
+        button:hover{
+            background: #36b38d;
+        }
+        .forgot{
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .forgot{
+            color: #185a9d;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>صفحة تسجيل الـــدخول<br>login</h2>
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Enter your username">
+
+        <label>password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <button onclick="login()">Login</button>
+        <p class="forgot">
+            forgot your password? <a href="#">Click here</a>
+        </p>
+    </div>
+
+    <script>
+        function login() {
+            let userField = document.getElementById("username");
+            let passField = document.getElementById("password");
+            let user=userField.value;
+            let pass=passField.value;
+
+            if (user === "" || pass === ""){
+                alert("please fill all fields");
+            }
+            else if (user === "admin" && pass === "1234") {
+            window.location.href="HTML.html";
+                alert("تم تسجيل الدخول بنجاح ✔✔ اضغط موافق لتصفح المشروع");
+            }
+            else{
+                alert("البيانات غير موجوده❌ او ادخلتها بشكل خطأ");
+                userField.value="";
+                 passField.value="";
+                  userField.focus();
+            }
+            }
+
+    </script>
+</body>
+</html>
