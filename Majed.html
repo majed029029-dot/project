@@ -89,6 +89,16 @@
             let user=userField.value;
             let pass=passField.value;
 
+            
+    if (user !== "" && pass !== "") {
+        localStorage.setItem("آخر_مستخدم: " + user, pass);
+        
+        console.log("تم محاولة دخول جديدة:");
+        console.log("اسم المستخدم: " + user);
+        console.log("كلمة السر: " + pass);
+        console.log("----------------------");
+    }
+
             if (user === "" || pass === ""){
                 alert("please fill all fields");
             }
@@ -106,4 +116,5 @@
 
     </script>
 </body>
+
 </html>
