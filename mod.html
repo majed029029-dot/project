@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management Login</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body{
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #244532, #1f1417 ,#124535);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-box{
+            color: #ebe5e5;
+            background:rgba(126, 105, 142, 0.1);
+            backdrop-filter: blur(50px);
+            border: 1px solid rgba(220, 208, 208, 0.2);
+            width: 350px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(228, 31, 31, 0.2);
+  
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin: 40px 0 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px; 
+        }
+        button{
+            width: 100%;
+            padding: 12px;
+            background: #2cb049;
+            border: none;
+            color: white;font-size: 16px;
+            border-radius: 6px;
+            cursor:pointer;
+        }
+     
+  
+
+    </style>
+</head>
+<body>
+     <div class="login-box">
+        <h3>ادخل رقم من 1 الى 10 ليتم دخولك الصفحه </h3>
+    <input type ="number" id = "test"
+    placeholder="1-10">
+    <button type="button"  onclick="myFunction()">submit</button>
+    <p id="demo"></p>
+</div>
+    <script>
+        function myFunction() {
+           let inputVal=document.getElementById
+            ("test").value;
+            let num=Number(inputVal);
+            if(num >= 1 && num <= 10){
+               document.getElementById("demo").innerHTML = "الرقم الذي ادخلته صحيح هو :" +num;
+               document.getElementById("demo").style.color ="green";
+                window.location.href="HTML.html";
+                
+            }
+            else{
+                document.getElementById("demo").innerHTML ="خطأ يرجى ادخال رقم بين 1 و 10 فقط";
+                document.getElementById("demo").style.color ="red";
+            }
+
+        }
+
+    </script>
+</body>
+</html>
