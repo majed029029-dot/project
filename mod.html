@@ -46,11 +46,27 @@
             cursor:pointer;
         }
      
-  
+   
+.circle{
+    width: 120px;
+    height: 120px;
+    background: #ff6fa8;
+    border-radius: 100%;
+    position: relative;
+    animation: move 2s infinite alternate ease-in-out;
+}
+@keyframes move{
+    100% {transform: translateX(50PX);}
+    90% {transform: translateX(300px);}
+}
+    
 
     </style>
 </head>
 <body>
+    
+    <div class="circle" id="myCircle"></div>
+    
      <div class="login-box">
         <h3>ادخل رقم من 1 الى 10 ليتم دخولك الصفحه </h3>
     <input type ="number" id = "test"
@@ -58,6 +74,23 @@
     <button type="button"  onclick="myFunction()">submit</button>
     <p id="demo"></p>
 </div>
+
+    <div class="circle" id="myCircle"></div>
+   <script>
+let isMoving = false;
+function toggleMove(){
+    const circle = document.getElementById("myCircle");
+    if(isMoving) {
+        circle.style.animationPlayState = "paused";
+    } else {
+         circle.style.animationPlayState = "running";
+    }
+
+    isMoving = !isMoving;
+}
+
+   </script>
+    
     <script>
         function myFunction() {
            let inputVal=document.getElementById
@@ -80,6 +113,7 @@
 </body>
 
 </html>
+
 
 
 
