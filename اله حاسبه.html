@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آلة حاسبة احترافية</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0d0d2a,rgb(70, 141, 158), #252540);
+        }
+
+        .calculator {
+            background-color: #ba9398;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            width: 350px;
+        }
+
+        #display {
+            width: 100%;
+            height: 60px;
+            background-color: #1e1e2f;
+            border: none;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 28px;
+            text-align: left; /* للأرقام الإنجليزية */
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 2px 5px rgba(250, 250, 250, 0.5);
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        button {
+            height: 60px;
+            border-radius: 12px;
+            border: none;
+            background-color: #2e2e78;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #44a462;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .operator {
+            background-color: #c24671;
+            color: rgb(248, 248, 248);
+        }
+
+        .operator:hover {
+            background-color: #ffb340;
+        }
+
+        .clear {
+            background-color: #cd3b34;
+        }
+
+        .clear:hover {
+            background-color: #ff5e54;
+        }
+
+        .equal {
+            background-color: #309a45;
+            grid-column: span 2;
+        }
+
+        .equal:hover {
+            background-color: #4cd964;
+        }
+
+        .double {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+       <center><h3>اّله حاسبةعادية</h3></center>
+       <h3>.........................................................</h3>
+        <input type="text" id="display" readonly placeholder="0">
+        
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">AC</button>
+            <button class="operator" onclick="deleteLast()">DEL</button>
+            <button class="operator" onclick="appendToDisplay('%')">%</button>
+            <button class="operator" onclick="appendToDisplay('/')">÷</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('*')">×</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">−</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+
+            <button class="double" onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+
+        function appendToDisplay(input) {
+            // منع تكرار العمليات الحسابية المتتالية بشكل خاطئ
+            display.value += input;
+        }
+
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        function deleteLast() {
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculate() {
+            try {
+                // استخدام eval لحساب النص البرمجي كعملية رياضية
+                // استبدال الرموز لضمان عمل الحساب بشكل صحيح
+                let result = eval(display.value);
+                
+                // التعامل مع الأرقام العشرية الطويلة
+                if (result % 1 !== 0) {
+                    result = result.toFixed(4);
+                }
+                
+                display.value = result;
+            } catch (error) {
+                display.value = "Error";
+                setTimeout(clearDisplay, 1500); // مسح الخطأ بعد ثانية ونصف
+            }
+        }
+
+        // دعم الكتابة من لوحة المفاتيح
+        document.addEventListener('keydown', (event) => {
+            const key = event.key;
+            if (/[0-9]/.test(key) || ['+', '-', '*', '/', '.', '%'].includes(key)) {
+                appendToDisplay(key);
+            } else if (key === 'Enter' || key === '=') {
+                calculate();
+            } else if (key === 'Backspace') {
+                deleteLast();
+            } else if (key === 'Escape') {
+                clearDisplay();
+            }
+        });
+    </script>
+</body>
+</html>
+
